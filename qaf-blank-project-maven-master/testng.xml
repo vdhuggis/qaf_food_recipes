@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="1" verbose="1" name="Food.com Suite" annotations="JDK" parallel="tests">
+
+<test name="FoodTestCases">
+<classes>
+<class name="com.qmetry.qaf.example.test.FoodTestCases"></class>
+</classes>
+</test>
+</suite>

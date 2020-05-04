@@ -1,0 +1,74 @@
+SCENARIO: verify Save Recipe Action for Guest User
+META-DATA: {"description":"verify Save Recipe for Guest User","groups":["SMOKE"]}
+	
+	Given get '/'
+	When navigate to recipe page
+	When navigate to search page
+	Then search recipe 'breakfast pizza'
+	Then select a recipe
+	Then save a recipe
+	Then verify login message for unregistered user while save/review
+	
+END
+
+SCENARIO: verify Review Recipe Action for Guest User
+META-DATA: {"description":"verify Review Recipe for Guest User","groups":["SMOKE"]}
+	
+	Given get '/'
+	When navigate to recipe page
+	When navigate to search page
+	Then search recipe 'breakfast pizza'
+	Then select a recipe
+	Then click on review btn
+	Then write a review 'Good'
+	Then verify login message for unregistered user while save/review
+	
+
+END
+SCENARIO: Verify SAVES Button functionality
+META-DATA: {"description":"Verify SAVES Button functionality","groups":["SMOKE"]}
+	
+	Given get '/'
+	When login as Reg User 'vdhuggis@gmail.com' 'Arjun@17'
+	When navigate to recipe page
+	Then navigate to search page
+	Then search recipe 'breakfast pizza'
+	Then select a recipe
+	Then save a recipe
+	Then verify saved recipe msg for Reg User
+	#Then verify saved recipe name from Saves Link
+
+END
+
+SCENARIO: verify Test Food Receipe Title
+META-DATA: {"description":"verify Test Food Receipe Title","groups":["SMOKE"]}
+	
+	Given get '/'
+	When navigate To Recipes page
+	Then verify text is RECIPES
+END
+
+SCENARIO: verify Search Results
+META-DATA: {"description":"verify Search Results -count","groups":["SMOKE"]}
+	
+	Given get '/'
+	When navigate to recipe page
+	When navigate to search page
+	Then search recipe 'Biriyani'
+	Then verify result count
+
+END
+
+
+
+SCENARIO: verify Invalid Search
+META-DATA: {"description":"verify Invalid Search","groups":["SMOKE"]}
+	
+	Given get '/'
+	When navigate to recipe page
+	When navigate to search page
+	Then search recipe 'Iphone'
+	Then verify no match message
+
+END
+
